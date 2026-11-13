@@ -24,7 +24,7 @@ classifiers = [
 dependencies = [
   "pandas>=2.2,<3",
   # numpy < 2.2 keeps the numba/llvmlite wheels (pulled in by shap) ABI compatible.
-  "numpy>=1.26,<2.2",
+  "numpy>=1.26,<2.3",
   "scikit-learn>=1.6,<2",
   "lightgbm>=4.5,<5",
   "optuna>=4.0,<5",
