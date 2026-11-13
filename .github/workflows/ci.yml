@@ -40,7 +40,7 @@ jobs:
         with:
           path: ~/.cache/pip
           key: pip-${{ matrix.python-version }}-${{ hashFiles('requirements.lock') }}
-      - run: pip install -r requirements.lock
+      - run: pip install -e ".[dev]"
       - run: pytest --cov=churn --cov-report=xml --cov-fail-under=65
       - uses: actions/upload-artifact@v4
         with:
