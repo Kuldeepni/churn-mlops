@@ -78,6 +78,41 @@ def main() -> None:
         [{"p": round(float(p), 4), "y": int(y)} for p, y in zip(proba, y_val)],
     )
 
+    # roc_curve.json, pr_curve.json, calibration.json (native charts)
+    import joblib as _joblib
+    from sklearn.metrics import roc_curve as _roc_curve, precision_recall_curve as _pr_curve, average_precision_score as _ap, roc_auc_score as _roc_auc
+    from sklearn.calibration import calibration_curve as _calib
+
+    _test_df = pd.read_parquet(paths.test_parquet)
+    _X_test = _test_df.drop(columns=["Churn", "customerID"], errors="ignore")
+    _calibrated = _joblib.load(paths.models_dir / "pipeline.joblib")
+    _base = _joblib.load(paths.models_dir / "base_pipeline.joblib")
+    _proba = _calibrated.predict_proba(_X_test)[:, 1]
+    _uncal = _base.predict_proba(_X_test)[:, 1]
+    _y = _test_df["Churn"].to_numpy()
+
+    def _downsample(xs, ys, n=100):
+        xs = np.asarray(xs); ys = np.asarray(ys)
+        if len(xs) <= n:
+            return [float(x) for x in xs], [float(y) for y in ys]
+        idx = np.unique(np.round(np.linspace(0, len(xs) - 1, n)).astype(int))
+        return [float(xs[i]) for i in idx], [float(ys[i]) for i in idx]
+
+    fpr, tpr, _ = _roc_curve(_y, _proba)
+    fpr_d, tpr_d = _downsample(fpr, tpr, 100)
+    _write(out_dir / "roc_curve.json", {"fpr": fpr_d, "tpr": tpr_d, "auc": float(_roc_auc(_y, _proba))})
+
+    precisions, recalls, _ = _pr_curve(_y, _proba)
+    r_d, p_d = _downsample(recalls, precisions, 100)
+    _write(out_dir / "pr_curve.json", {"recall": r_d, "precision": p_d, "ap": float(_ap(_y, _proba))})
+
+    frac_uncal, mean_uncal = _calib(_y, _uncal, n_bins=10)
+    frac_cal, mean_cal = _calib(_y, _proba, n_bins=10)
+    _write(out_dir / "calibration.json", {
+        "before": {"mean_predicted": [float(x) for x in mean_uncal], "fraction_positive": [float(x) for x in frac_uncal]},
+        "after": {"mean_predicted": [float(x) for x in mean_cal], "fraction_positive": [float(x) for x in frac_cal]},
+    })
+
     # business_params.json
     _write(
         out_dir / "business_params.json",

@@ -1,12 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
+    <title>churn-mlops — Predict churn. Decide by profit.</title>
+    <meta name="description" content="A production-grade MLOps pipeline turning calibrated probabilities into retention decisions that maximize expected profit." />
+    <link rel="canonical" href="https://kuldeepni.github.io/churn-mlops/" />
+    <meta property="og:title" content="churn-mlops" />
+    <meta property="og:description" content="Predict churn. Decide by profit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.classList.toggle('dark',t==='dark');}catch(e){document.documentElement.classList.add('dark');}})();
+    </script>
   </head>
   <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-surface focus:px-3 focus:py-2">Skip to content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

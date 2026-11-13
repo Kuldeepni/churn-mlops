@@ -62,7 +62,7 @@
         "feature": "InternetService",
         "type": "categorical",
         "psi": 0.026856226225305806,
-        "chi2_pvalue": 0.024327098098166536,
+        "chi2_pvalue": 0.02432709809816655,
         "drifted": false
       },
       {
@@ -210,7 +210,7 @@
         "feature": "InternetService",
         "type": "categorical",
         "psi": 0.026856226225305806,
-        "chi2_pvalue": 0.024327098098166536,
+        "chi2_pvalue": 0.02432709809816655,
         "drifted": false
       },
       {

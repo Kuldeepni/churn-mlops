@@ -1,52 +1,18 @@
 export interface CustomerFeatures {
-  gender: string
-  SeniorCitizen: string
-  Partner: string
-  Dependents: string
-  tenure: number
-  PhoneService: string
-  MultipleLines: string
-  InternetService: string
-  OnlineSecurity: string
-  OnlineBackup: string
-  DeviceProtection: string
-  TechSupport: string
-  StreamingTV: string
-  StreamingMovies: string
-  Contract: string
-  PaperlessBilling: string
-  PaymentMethod: string
-  MonthlyCharges: number
-  TotalCharges: number
+  gender: string; SeniorCitizen: string; Partner: string; Dependents: string;
+  tenure: number; PhoneService: string; MultipleLines: string; InternetService: string;
+  OnlineSecurity: string; OnlineBackup: string; DeviceProtection: string; TechSupport: string;
+  StreamingTV: string; StreamingMovies: string; Contract: string; PaperlessBilling: string;
+  PaymentMethod: string; MonthlyCharges: number; TotalCharges: number;
 }
-
-export interface TopFactor {
-  feature: string
-  impact: number
-  direction: 'increases_churn' | 'decreases_churn'
-}
-
-export interface Prediction {
-  churn_probability: number
-  will_churn: boolean
-  risk_band: 'low' | 'medium' | 'high'
-  top_factors: TopFactor[]
-}
-
-export interface PredictResponse {
-  predictions: Prediction[]
-  model_version: string
-  threshold: number
-  request_id?: string
-}
-
-export interface HealthResponse {
-  status: string
-}
+export interface TopFactor { feature: string; impact: number; direction: 'increases_churn' | 'decreases_churn' }
+export interface Prediction { churn_probability: number; will_churn: boolean; risk_band: 'low'|'medium'|'high'; top_factors: TopFactor[] }
+export interface PredictResponse { predictions: Prediction[]; model_version: string; threshold: number; request_id?: string }
+export interface HealthResponse { status: string }
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://kuldeepni-churn-mlops-api.hf.space'
 
-async function fetchWithRetry(url: string, options: RequestInit, retries = 3): Promise<Response> {
+export async function fetchWithRetry(url: string, options: RequestInit, retries = 3): Promise<Response> {
   let lastErr: Error | null = null
   for (let i = 0; i < retries; i++) {
     try {
@@ -73,7 +39,6 @@ export async function healthCheck(): Promise<HealthResponse> {
   if (!res.ok) throw new Error('Health check failed')
   return res.json()
 }
-
 export async function predict(instances: CustomerFeatures[], explain = true): Promise<PredictResponse> {
   const res = await fetchWithRetry(`${API_URL}/predict?explain=${explain}`, {
     method: 'POST',
@@ -86,3 +51,4 @@ export async function predict(instances: CustomerFeatures[], explain = true): Pr
   }
   return res.json()
 }
+export { API_URL }
