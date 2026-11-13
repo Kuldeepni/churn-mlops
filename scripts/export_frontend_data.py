@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from churn.config import get_paths, load_params
-from churn.data.clean import clean
+
 from churn.data.schema import (
     CATEGORICAL_COLUMNS,
     CONTRACT_VALUES,
@@ -21,7 +21,6 @@ from churn.data.schema import (
     SERVICE_VALUES,
     YES_NO_VALUES,
 )
-from churn.features import FeatureEngineer, build_preprocessor
 from churn.models.explain import build_explainer
 from churn.monitoring.drift import compute_drift
 from churn.monitoring.simulate import simulate_traffic
