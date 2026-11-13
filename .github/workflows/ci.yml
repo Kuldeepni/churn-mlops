@@ -58,7 +58,7 @@ jobs:
         with:
           path: ~/.cache/pip
           key: pip-pipeline-${{ hashFiles('requirements.lock') }}
-      - run: pip install -r requirements.lock
+      - run: pip install -e ".[dev]"
       - run: dvc repro
       - run: python -m churn.evaluate
       - uses: actions/upload-artifact@v4
