@@ -27,16 +27,16 @@ htmlcov/
 .jcache/
 
 # Data, models, tracking (never commit)
-data/
-models/
-reports/
-mlruns/
-mlflow.db
+/data/
+/models/
+/reports/
+/mlruns/
+/mlflow.db
 mlflow.db-*
 *.sqlite
 *.sqlite3
-logs/
-log/
+/logs/
+/log/
 
 # DVC (keep the pipeline definition, never the cache)
 .dvc/cache/
