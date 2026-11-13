@@ -1,0 +1,87 @@
+{
+  "version": "0.1.0",
+  "git_sha": "testsha",
+  "trained_at": "2026-11-13T11:40:07.349547+00:00",
+  "feature_list": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "dataset_source": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "metrics": {
+    "roc_auc": 0.8431475884161307,
+    "pr_auc": 0.6404013254760901,
+    "pr_auc_ci": [
+      0.5906146496514354,
+      0.6868259056408432
+    ],
+    "precision": 0.4519230769230769,
+    "recall": 0.8796791443850267,
+    "f1": 0.5970961887477314,
+    "brier": 0.13543634407914454,
+    "brier_uncalibrated": 0.16325426019768738,
+    "threshold": 0.18000000000000002,
+    "net_benefit_per_1000": 67068.84315117105,
+    "net_benefit_per_1000_ci": [
+      58635.20227111427,
+      75587.65081618169
+    ],
+    "confusion_matrix": [
+      [
+        636,
+        399
+      ],
+      [
+        45,
+        329
+      ]
+    ],
+    "subgroups": {
+      "gender": {
+        "Female": {
+          "n": 687,
+          "recall": 0.8808290155440415,
+          "precision": 0.46831955922865015,
+          "churn_rate": 0.28093158660844253
+        },
+        "Male": {
+          "n": 722,
+          "recall": 0.8784530386740331,
+          "precision": 0.43561643835616437,
+          "churn_rate": 0.25069252077562326
+        }
+      },
+      "SeniorCitizen": {
+        "No": {
+          "n": 1187,
+          "recall": 0.8442028985507246,
+          "precision": 0.42057761732851984,
+          "churn_rate": 0.2325189553496209
+        },
+        "Yes": {
+          "n": 222,
+          "recall": 0.9795918367346939,
+          "precision": 0.5517241379310345,
+          "churn_rate": 0.44144144144144143
+        }
+      }
+    },
+    "n_test": 1409
+  }
+}

@@ -77,6 +77,12 @@ check: lint typecheck test ## Run lint + typecheck + tests
 notebooks: ## Execute the EDA notebook with saved outputs
 	$(PYTHON) -m jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
+web-data: ## Export real pipeline outputs as JSON for the frontend
+	$(PYTHON) scripts/export_frontend_data.py
+
+deploy-space: ## Deploy the API to Hugging Face Spaces (requires HF_TOKEN)
+	bash scripts/deploy_space.sh
+
 # --- Serving ----------------------------------------------------------------
 serve: ## Start the FastAPI service on http://127.0.0.1:8000
 	$(PYTHON) -m uvicorn churn.api.main:app --host 127.0.0.1 --port 8000 --reload

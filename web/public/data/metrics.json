@@ -1,0 +1,113 @@
+{
+  "test": {
+    "roc_auc": 0.8431475884161307,
+    "pr_auc": 0.6404013254760901,
+    "pr_auc_ci": [
+      0.5906146496514354,
+      0.6868259056408432
+    ],
+    "precision": 0.4519230769230769,
+    "recall": 0.8796791443850267,
+    "f1": 0.5970961887477314,
+    "brier": 0.13543634407914454,
+    "brier_uncalibrated": 0.16325426019768738,
+    "threshold": 0.18000000000000002,
+    "net_benefit_per_1000": 67068.84315117105,
+    "net_benefit_per_1000_ci": [
+      58635.20227111427,
+      75587.65081618169
+    ],
+    "confusion_matrix": [
+      [
+        636,
+        399
+      ],
+      [
+        45,
+        329
+      ]
+    ],
+    "subgroups": {
+      "gender": {
+        "Female": {
+          "n": 687,
+          "recall": 0.8808290155440415,
+          "precision": 0.46831955922865015,
+          "churn_rate": 0.28093158660844253
+        },
+        "Male": {
+          "n": 722,
+          "recall": 0.8784530386740331,
+          "precision": 0.43561643835616437,
+          "churn_rate": 0.25069252077562326
+        }
+      },
+      "SeniorCitizen": {
+        "No": {
+          "n": 1187,
+          "recall": 0.8442028985507246,
+          "precision": 0.42057761732851984,
+          "churn_rate": 0.2325189553496209
+        },
+        "Yes": {
+          "n": 222,
+          "recall": 0.9795918367346939,
+          "precision": 0.5517241379310345,
+          "churn_rate": 0.44144144144144143
+        }
+      }
+    },
+    "n_test": 1409
+  },
+  "threshold": {
+    "threshold": 0.38,
+    "cost_params": {
+      "customer_lifetime_value": 1200.0,
+      "retention_offer_cost": 60.0,
+      "offer_success_rate": 0.35,
+      "sweep_min": 0.01,
+      "sweep_max": 0.99,
+      "sweep_steps": 99
+    },
+    "validation_summary": {
+      "chosen_threshold": 0.38,
+      "expected_net_benefit_per_1000": 64500.0,
+      "expected_net_benefit_per_1000_at_0.5": 18000.0,
+      "expected_net_benefit_per_1000_target_all": 45000.0,
+      "expected_net_benefit_per_1000_target_none": 0.0,
+      "n_customers": 40
+    }
+  },
+  "comparison": [
+    {
+      "model": "logistic",
+      "roc_auc_mean": 0.8530214424951266,
+      "roc_auc_std": 0.056073472456340485,
+      "pr_auc_mean": 0.6811176862353333,
+      "pr_auc_std": 0.0952695259515747,
+      "f1_mean": 0.5745098039215686,
+      "f1_std": 0.11171997728984723,
+      "precision_mean": 0.509090909090909,
+      "precision_std": 0.12426459521322958,
+      "recall_mean": 0.6866666666666666,
+      "recall_std": 0.16812693617224655,
+      "brier_mean": 0.1715774631465433,
+      "brier_std": 0.04586270650449775
+    },
+    {
+      "model": "lightgbm-tuned",
+      "roc_auc_mean": 0.9014230019493178,
+      "roc_auc_std": 0.030699718364371652,
+      "pr_auc_mean": 0.7673752358752359,
+      "pr_auc_std": 0.09523437979519812,
+      "f1_mean": 0.6354761904761904,
+      "f1_std": 0.05030744479962757,
+      "precision_mean": 0.5783333333333334,
+      "precision_std": 0.06741249472052227,
+      "recall_mean": 0.72,
+      "recall_std": 0.09568466729604887,
+      "brier_mean": 0.1246935595350179,
+      "brier_std": 0.021010090788484218
+    }
+  ]
+}

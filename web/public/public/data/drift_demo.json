@@ -1,0 +1,298 @@
+{
+  "no_shift": {
+    "status": "ok",
+    "n_samples": 300,
+    "n_features": 19,
+    "n_drifted": 7,
+    "drifted_share": 0.3684210526315789,
+    "drift_detected": true,
+    "threshold": 0.3,
+    "features": [
+      {
+        "feature": "gender",
+        "type": "categorical",
+        "psi": 0.0015517828162923204,
+        "chi2_pvalue": 0.4954492633158726,
+        "drifted": false
+      },
+      {
+        "feature": "SeniorCitizen",
+        "type": "categorical",
+        "psi": 0.002381509483901586,
+        "chi2_pvalue": 0.3858817586602543,
+        "drifted": false
+      },
+      {
+        "feature": "Partner",
+        "type": "categorical",
+        "psi": 0.00027873278389616544,
+        "chi2_pvalue": 0.7725533262879989,
+        "drifted": false
+      },
+      {
+        "feature": "Dependents",
+        "type": "categorical",
+        "psi": 0.006847114645829624,
+        "chi2_pvalue": 0.15801059675845622,
+        "drifted": false
+      },
+      {
+        "feature": "tenure",
+        "type": "numeric",
+        "psi": 0.3903839581553055,
+        "ks_statistic": 0.08,
+        "ks_pvalue": 0.6197581218274406,
+        "drifted": true
+      },
+      {
+        "feature": "PhoneService",
+        "type": "categorical",
+        "psi": 0.0036414004270471385,
+        "chi2_pvalue": 0.3151500549975423,
+        "drifted": false
+      },
+      {
+        "feature": "MultipleLines",
+        "type": "categorical",
+        "psi": 0.0056683253643342625,
+        "chi2_pvalue": 0.4422017027683107,
+        "drifted": false
+      },
+      {
+        "feature": "InternetService",
+        "type": "categorical",
+        "psi": 0.026856226225305806,
+        "chi2_pvalue": 0.024327098098166536,
+        "drifted": false
+      },
+      {
+        "feature": "OnlineSecurity",
+        "type": "categorical",
+        "psi": 0.03572461301158253,
+        "chi2_pvalue": 0.005050090803254431,
+        "drifted": true
+      },
+      {
+        "feature": "OnlineBackup",
+        "type": "categorical",
+        "psi": 0.027758670098484393,
+        "chi2_pvalue": 0.020780153655869896,
+        "drifted": false
+      },
+      {
+        "feature": "DeviceProtection",
+        "type": "categorical",
+        "psi": 0.04563219004963326,
+        "chi2_pvalue": 0.0008979592535472174,
+        "drifted": true
+      },
+      {
+        "feature": "TechSupport",
+        "type": "categorical",
+        "psi": 0.057298505134593385,
+        "chi2_pvalue": 9.612061520373664e-05,
+        "drifted": true
+      },
+      {
+        "feature": "StreamingTV",
+        "type": "categorical",
+        "psi": 0.03275134466368433,
+        "chi2_pvalue": 0.00887486867762754,
+        "drifted": true
+      },
+      {
+        "feature": "StreamingMovies",
+        "type": "categorical",
+        "psi": 0.039613185162323705,
+        "chi2_pvalue": 0.002738180143474881,
+        "drifted": true
+      },
+      {
+        "feature": "Contract",
+        "type": "categorical",
+        "psi": 0.033068021167029976,
+        "chi2_pvalue": 0.009161949796114946,
+        "drifted": true
+      },
+      {
+        "feature": "PaperlessBilling",
+        "type": "categorical",
+        "psi": 0.0016236091335767259,
+        "chi2_pvalue": 0.48623432138829725,
+        "drifted": false
+      },
+      {
+        "feature": "PaymentMethod",
+        "type": "categorical",
+        "psi": 0.02733332668329303,
+        "chi2_pvalue": 0.050504513276239095,
+        "drifted": false
+      },
+      {
+        "feature": "MonthlyCharges",
+        "type": "numeric",
+        "psi": 0.1094773177932597,
+        "ks_statistic": 0.095,
+        "ks_pvalue": 0.401785682608203,
+        "drifted": false
+      },
+      {
+        "feature": "TotalCharges",
+        "type": "numeric",
+        "psi": 0.1247749195588927,
+        "ks_statistic": 0.09666666666666666,
+        "ks_pvalue": 0.3805027051514089,
+        "drifted": false
+      }
+    ],
+    "score_drift": null
+  },
+  "shifted": {
+    "status": "ok",
+    "n_samples": 300,
+    "n_features": 19,
+    "n_drifted": 8,
+    "drifted_share": 0.42105263157894735,
+    "drift_detected": true,
+    "threshold": 0.3,
+    "features": [
+      {
+        "feature": "gender",
+        "type": "categorical",
+        "psi": 0.0015517828162923204,
+        "chi2_pvalue": 0.4954492633158726,
+        "drifted": false
+      },
+      {
+        "feature": "SeniorCitizen",
+        "type": "categorical",
+        "psi": 0.002381509483901586,
+        "chi2_pvalue": 0.3858817586602543,
+        "drifted": false
+      },
+      {
+        "feature": "Partner",
+        "type": "categorical",
+        "psi": 0.00027873278389616544,
+        "chi2_pvalue": 0.7725533262879989,
+        "drifted": false
+      },
+      {
+        "feature": "Dependents",
+        "type": "categorical",
+        "psi": 0.006847114645829624,
+        "chi2_pvalue": 0.15801059675845622,
+        "drifted": false
+      },
+      {
+        "feature": "tenure",
+        "type": "numeric",
+        "psi": 3.567532185275299,
+        "ks_statistic": 0.25166666666666665,
+        "ks_pvalue": 3.055866730525005e-05,
+        "drifted": true
+      },
+      {
+        "feature": "PhoneService",
+        "type": "categorical",
+        "psi": 0.0036414004270471385,
+        "chi2_pvalue": 0.3151500549975423,
+        "drifted": false
+      },
+      {
+        "feature": "MultipleLines",
+        "type": "categorical",
+        "psi": 0.0056683253643342625,
+        "chi2_pvalue": 0.4422017027683107,
+        "drifted": false
+      },
+      {
+        "feature": "InternetService",
+        "type": "categorical",
+        "psi": 0.026856226225305806,
+        "chi2_pvalue": 0.024327098098166536,
+        "drifted": false
+      },
+      {
+        "feature": "OnlineSecurity",
+        "type": "categorical",
+        "psi": 0.03572461301158253,
+        "chi2_pvalue": 0.005050090803254431,
+        "drifted": true
+      },
+      {
+        "feature": "OnlineBackup",
+        "type": "categorical",
+        "psi": 0.027758670098484393,
+        "chi2_pvalue": 0.020780153655869896,
+        "drifted": false
+      },
+      {
+        "feature": "DeviceProtection",
+        "type": "categorical",
+        "psi": 0.04563219004963326,
+        "chi2_pvalue": 0.0008979592535472174,
+        "drifted": true
+      },
+      {
+        "feature": "TechSupport",
+        "type": "categorical",
+        "psi": 0.057298505134593385,
+        "chi2_pvalue": 9.612061520373664e-05,
+        "drifted": true
+      },
+      {
+        "feature": "StreamingTV",
+        "type": "categorical",
+        "psi": 0.03275134466368433,
+        "chi2_pvalue": 0.00887486867762754,
+        "drifted": true
+      },
+      {
+        "feature": "StreamingMovies",
+        "type": "categorical",
+        "psi": 0.039613185162323705,
+        "chi2_pvalue": 0.002738180143474881,
+        "drifted": true
+      },
+      {
+        "feature": "Contract",
+        "type": "categorical",
+        "psi": 0.29767016908961597,
+        "chi2_pvalue": 1.0571953725181472e-17,
+        "drifted": true
+      },
+      {
+        "feature": "PaperlessBilling",
+        "type": "categorical",
+        "psi": 0.0016236091335767259,
+        "chi2_pvalue": 0.48623432138829725,
+        "drifted": false
+      },
+      {
+        "feature": "PaymentMethod",
+        "type": "categorical",
+        "psi": 0.02733332668329303,
+        "chi2_pvalue": 0.050504513276239095,
+        "drifted": false
+      },
+      {
+        "feature": "MonthlyCharges",
+        "type": "numeric",
+        "psi": 3.6530831860104405,
+        "ks_statistic": 0.305,
+        "ks_pvalue": 1.5993855421130583e-07,
+        "drifted": true
+      },
+      {
+        "feature": "TotalCharges",
+        "type": "numeric",
+        "psi": 0.14103153463754595,
+        "ks_statistic": 0.11833333333333333,
+        "ks_pvalue": 0.17009498466335807,
+        "drifted": false
+      }
+    ],
+    "score_drift": null
+  }
+}
