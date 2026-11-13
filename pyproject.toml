@@ -44,7 +44,7 @@ dependencies = [
   "scipy>=1.13,<2",
   "requests>=2.32,<3",
   "joblib>=1.4,<2",
-  "pyarrow>=17,<20",
+  "pyarrow>=17,<26",
   "pyyaml>=6.0,<7",
 ]
 
