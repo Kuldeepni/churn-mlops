@@ -1,0 +1,157 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "churn-mlops"
+version = "0.1.0"
+description = "Cost-optimized telecom churn prediction: DVC pipeline, MLflow tracking/registry, FastAPI serving, drift monitoring."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10,<3.13"
+authors = [{ name = "churn-mlops contributors" }]
+keywords = ["mlops", "churn", "mlflow", "dvc", "fastapi", "drift", "monitoring"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+  "pandas>=2.2,<3",
+  # numpy < 2.2 keeps the numba/llvmlite wheels (pulled in by shap) ABI compatible.
+  "numpy>=1.26,<2.2",
+  "scikit-learn>=1.6,<2",
+  "lightgbm>=4.5,<5",
+  "optuna>=4.0,<5",
+  "shap>=0.45,<1",
+  # numba is a shap dependency; pinned for reproducible wheels (see docs/decisions.md).
+  "numba>=0.59,<0.62",
+  "pandera>=0.20,<1",
+  "mlflow>=2.17,<3",
+  "dvc>=3.50,<4",
+  "fastapi>=0.115,<1",
+  "pydantic>=2.9,<3",
+  "pydantic-settings>=2.5,<3",
+  "uvicorn[standard]>=0.32,<1",
+  "prometheus-client>=0.21,<1",
+  "structlog>=24.4,<26",
+  "matplotlib>=3.9,<4",
+  "scipy>=1.13,<2",
+  "requests>=2.32,<3",
+  "joblib>=1.4,<2",
+  "pyarrow>=17,<20",
+  "pyyaml>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=5.0,<7",
+  "httpx>=0.27,<1",
+  "ruff>=0.7,<1",
+  "mypy>=1.13,<2",
+  "pre-commit>=3.8,<5",
+  "pandas-stubs>=2.2",
+  "types-requests>=2.32",
+]
+
+[project.scripts]
+churn = "churn.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/churn-mlops/churn-mlops"
+Documentation = "https://github.com/churn-mlops/churn-mlops/tree/main/docs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/churn"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+extend-exclude = [".venv", "data", "models", "mlruns", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "PL"]
+ignore = [
+  "PLR0913", # too many arguments - sklearn/Pydantic constructors legitimately have many
+  "PLR2004", # magic value comparison - explicit thresholds are clearer than constants
+  "PLR0912", # too many branches - keeps data validation logic readable in one place
+  "PLR0915", # too many statements
+  "PLR0911", # too many return statements
+  "PLR2004", # magic value used in comparison
+  "SIM108", # ternary - explicit if/else is often clearer in pandas code
+  "B008", # function call in default argument - required by pydantic-settings/FastAPI
+  "PLC0415", # lazy imports are used to break circular dependencies
+  "E501", # line length handled by the formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004", "E402", "PLR0915", "PLR0914", "B011"]
+"notebooks/*" = ["E402", "F401"]
+"scripts/*" = ["E402"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["churn"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/churn"]
+strict = true
+warn_unreachable = true
+show_error_codes = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+  "lightgbm.*",
+  "optuna.*",
+  "shap.*",
+  "pandera.*",
+  "mlflow.*",
+  "dvc.*",
+  "sklearn.*",
+  "matplotlib.*",
+  "dask.*",
+  "yaml.*",
+]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["churn.models.registry", "churn.models.bundle"]
+disallow_untyped_defs = true
+warn_unused_ignores = false
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+markers = [
+  "slow: long-running tests (optuna studies, full pipeline, bootstrap CIs)",
+  "integration: end-to-end tests spanning multiple components",
+]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  "ignore::FutureWarning",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["churn"]
+omit = ["*/__main__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 65
+exclude_lines = [
+  "pragma: no cover",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+]

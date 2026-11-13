@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / type checking / linting caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.jcache/
+
+# Data, models, tracking (never commit)
+data/
+models/
+reports/
+mlruns/
+mlflow.db
+mlflow.db-*
+*.sqlite
+*.sqlite3
+logs/
+log/
+
+# DVC (keep the pipeline definition, never the cache)
+.dvc/cache/
+.dvc/tmp/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# MLflow artifacts
+artifacts/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints

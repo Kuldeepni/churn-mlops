@@ -1,0 +1,96 @@
+# ---------------------------------------------------------------------------
+# params.yaml - the single source of truth for the training pipeline.
+# DVC tracks this file; changing a value re-runs the affected stages only.
+# Every value is validated by `churn.config.Params` (pydantic v2).
+# ---------------------------------------------------------------------------
+
+# Global seed used for every stochastic component (split, CV, optuna, bootstrap).
+seed: 42
+
+data:
+  url: https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv
+  fallback_url: https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv
+  min_rows: 7000
+  expected_columns: 21
+  download_timeout_seconds: 60.0
+  download_retries: 3
+
+split:
+  train_size: 0.6
+  val_size: 0.2
+  test_size: 0.2
+  churn_rate_tolerance: 0.05
+
+features:
+  # OneHotEncoder(min_frequency=...) - rare categories are folded into "infrequent".
+  min_frequency: 10
+  tenure_bucket_edges: [0, 12, 24, 48, 60]
+  addon_services:
+    - OnlineSecurity
+    - OnlineBackup
+    - DeviceProtection
+    - TechSupport
+    - StreamingTV
+    - StreamingMovies
+
+model:
+  cv_folds: 5
+  candidates:
+    - logistic
+    - lightgbm
+  logistic:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 2000
+  lightgbm:
+    n_estimators: 400
+    learning_rate: 0.05
+    num_leaves: 31
+    max_depth: -1
+    min_child_samples: 20
+    subsample: 0.9
+    subsample_freq: 1
+    colsample_bytree: 0.9
+    reg_alpha: 0.0
+    reg_lambda: 1.0
+    scale_pos_weight: 1.0
+    random_state: 42
+  optuna:
+    n_trials: 20
+    timeout: 600
+    seed: 42
+    pruner: median
+
+calibration:
+  methods:
+    - isotonic
+    - sigmoid
+
+# Business parameters driving the decision threshold (see docs/decisions.md).
+threshold:
+  customer_lifetime_value: 1200.0
+  retention_offer_cost: 60.0
+  offer_success_rate: 0.35
+  sweep_min: 0.01
+  sweep_max: 0.99
+  sweep_steps: 99
+
+evaluation:
+  # Quality gate. Values are set from the observed baseline with a safety margin.
+  min_pr_auc: 0.55
+  min_recall: 0.40
+  bootstrap_iterations: 1000
+
+monitoring:
+  psi_threshold: 0.2
+  ks_threshold: 0.15
+  chi2_pvalue_threshold: 0.01
+  max_drifted_feature_share: 0.3
+  min_samples: 200
+  score_psi_threshold: 0.2
+
+api:
+  # Risk bands: p < low -> "low", low <= p < high -> "medium", p >= high -> "high"
+  risk_band_low: 0.25
+  risk_band_high: 0.55
+  top_factors: 3
