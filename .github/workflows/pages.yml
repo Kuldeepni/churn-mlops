@@ -28,6 +28,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: web/package-lock.json
       - run: pip install -e ".[dev]"
+      - run: dvc repro
       - run: python scripts/export_frontend_data.py
       - working-directory: web
         run: npm ci
