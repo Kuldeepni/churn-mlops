@@ -34,7 +34,6 @@ stages:
       - models/calibrated_pipeline.joblib
       - data/processed/val.parquet
     outs:
-      - models/threshold.json
       - reports/threshold.json
   evaluate:
     cmd: python -m churn.models.bundle && python -m churn.evaluate
