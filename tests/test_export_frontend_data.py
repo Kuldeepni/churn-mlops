@@ -8,11 +8,20 @@ import pytest
 DATA_DIR = Path("web/public/data")
 
 
-@pytest.mark.parametrize("name", [
-    "metrics.json", "model_info.json", "validation_scores.json",
-    "business_params.json", "examples.json", "feature_options.json",
-    "importance.json", "drift_demo.json", "pipeline_status.json",
-])
+@pytest.mark.parametrize(
+    "name",
+    [
+        "metrics.json",
+        "model_info.json",
+        "validation_scores.json",
+        "business_params.json",
+        "examples.json",
+        "feature_options.json",
+        "importance.json",
+        "drift_demo.json",
+        "pipeline_status.json",
+    ],
+)
 def test_export_files_exist(name: str) -> None:
     assert (DATA_DIR / name).is_file(), f"missing {name}"
 

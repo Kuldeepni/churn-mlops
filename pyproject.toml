@@ -46,6 +46,8 @@ dependencies = [
   "joblib>=1.4,<2",
   "pyarrow>=17,<20",
   "pyyaml>=6.0,<7",
+  # sqlalchemy 2.1 removed FallbackAsyncAdaptedQueuePool, which mlflow 2.x still imports.
+  "sqlalchemy>=2.0.35,<2.1",
 ]
 
 [project.optional-dependencies]

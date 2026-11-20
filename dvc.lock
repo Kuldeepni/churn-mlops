@@ -1,0 +1,117 @@
+schema: '2.0'
+stages:
+  ingest:
+    cmd: python -m churn.data.ingest
+    outs:
+    - path: data/raw/Telco-Customer-Churn.csv
+      hash: md5
+      md5: 3b0bfab28a8101b4e4fdd08025a5c235
+      size: 970457
+    - path: data/raw/manifest.json
+      hash: md5
+      md5: beac553f3483d4f13bad1e0958187472
+      size: 310
+  clean_split:
+    cmd: python -m churn.data.clean && python -m churn.data.split
+    deps:
+    - path: data/raw/Telco-Customer-Churn.csv
+      hash: md5
+      md5: 3b0bfab28a8101b4e4fdd08025a5c235
+      size: 970457
+    outs:
+    - path: data/interim/clean.parquet
+      hash: md5
+      md5: 194c64f687a4c581bd12cb2be7f71eca
+      size: 195524
+    - path: data/processed/test.parquet
+      hash: md5
+      md5: 9767833476e8dd6734f82bfa4b96bf64
+      size: 51120
+    - path: data/processed/train.parquet
+      hash: md5
+      md5: 0b3ab757e99126b7ea6885b4cf00c14d
+      size: 123978
+    - path: data/processed/val.parquet
+      hash: md5
+      md5: d80c3ffe000f300066b2eb1dcde0fade
+      size: 51156
+  train:
+    cmd: python -m churn.models.train
+    deps:
+    - path: data/processed/train.parquet
+      hash: md5
+      md5: 0b3ab757e99126b7ea6885b4cf00c14d
+      size: 123978
+    outs:
+    - path: models/uncalibrated_pipeline.joblib
+      hash: md5
+      md5: 4e350f60d3cc4c7d1ed1fc9af828ad28
+      size: 10458
+    - path: reports/model_comparison.json
+      hash: md5
+      md5: 422a4563679c64dc7e9f7180a312b508
+      size: 1048
+  calibrate:
+    cmd: python -m churn.models.calibrate
+    deps:
+    - path: data/processed/val.parquet
+      hash: md5
+      md5: d80c3ffe000f300066b2eb1dcde0fade
+      size: 51156
+    - path: models/uncalibrated_pipeline.joblib
+      hash: md5
+      md5: 4e350f60d3cc4c7d1ed1fc9af828ad28
+      size: 10458
+    outs:
+    - path: models/calibrated_pipeline.joblib
+      hash: md5
+      md5: 8c31487eaf927bc42d6b3cdba2f479d8
+      size: 13118
+  threshold:
+    cmd: python -m churn.models.threshold
+    deps:
+    - path: data/processed/val.parquet
+      hash: md5
+      md5: d80c3ffe000f300066b2eb1dcde0fade
+      size: 51156
+    - path: models/calibrated_pipeline.joblib
+      hash: md5
+      md5: 8c31487eaf927bc42d6b3cdba2f479d8
+      size: 13118
+    outs:
+    - path: reports/threshold.json
+      hash: md5
+      md5: 387975839b9ec20c5bfb8511301d6ffa
+      size: 592
+  evaluate:
+    cmd: python -m churn.models.bundle && python -m churn.evaluate
+    deps:
+    - path: data/processed/test.parquet
+      hash: md5
+      md5: 9767833476e8dd6734f82bfa4b96bf64
+      size: 51120
+    - path: models/calibrated_pipeline.joblib
+      hash: md5
+      md5: 8c31487eaf927bc42d6b3cdba2f479d8
+      size: 13118
+    outs:
+    - path: models/base_pipeline.joblib
+      hash: md5
+      md5: 6957a710edf48412a812f9c5465e1155
+      size: 11290
+    - path: models/metadata.json
+      hash: md5
+      md5: b39def153d9f1e2083d878a5342a39a9
+      size: 3143
+    - path: models/pipeline.joblib
+      hash: md5
+      md5: bea82a3f7d61219a2c71da53dd8fa2e3
+      size: 13216
+    - path: models/reference_stats.json
+      hash: md5
+      md5: 5337c6370a4ae6d0282250fbcf3d9076
+      size: 178124
+    - path: reports/metrics.json
+      hash: md5
+      md5: 17abbc8e6521e0636f3c0036c451f570
+      size: 1372

@@ -10,7 +10,6 @@ import numpy as np
 import pandas as pd
 
 from churn.config import get_paths, load_params
-
 from churn.data.schema import (
     CATEGORICAL_COLUMNS,
     CONTRACT_VALUES,
@@ -41,8 +40,12 @@ def main() -> None:
 
     # metrics.json
     metrics = json.loads(paths.metrics_json.read_text(encoding="utf-8"))
-    threshold_payload = json.loads((paths.models_dir / "threshold.json").read_text(encoding="utf-8"))
-    comparison = json.loads((paths.reports_dir / "model_comparison.json").read_text(encoding="utf-8"))
+    threshold_payload = json.loads(
+        (paths.models_dir / "threshold.json").read_text(encoding="utf-8")
+    )
+    comparison = json.loads(
+        (paths.reports_dir / "model_comparison.json").read_text(encoding="utf-8")
+    )
     metrics_out = {
         "test": metrics,
         "threshold": threshold_payload,
@@ -74,13 +77,16 @@ def main() -> None:
     y_val = val_df["Churn"].to_numpy()
     _write(
         out_dir / "validation_scores.json",
-        [{"p": round(float(p), 4), "y": int(y)} for p, y in zip(proba, y_val)],
+        [{"p": round(float(p), 4), "y": int(y)} for p, y in zip(proba, y_val, strict=False)],
     )
 
     # roc_curve.json, pr_curve.json, calibration.json (native charts)
     import joblib as _joblib
-    from sklearn.metrics import roc_curve as _roc_curve, precision_recall_curve as _pr_curve, average_precision_score as _ap, roc_auc_score as _roc_auc
     from sklearn.calibration import calibration_curve as _calib
+    from sklearn.metrics import average_precision_score as _ap
+    from sklearn.metrics import precision_recall_curve as _pr_curve
+    from sklearn.metrics import roc_auc_score as _roc_auc
+    from sklearn.metrics import roc_curve as _roc_curve
 
     _test_df = pd.read_parquet(paths.test_parquet)
     _X_test = _test_df.drop(columns=["Churn", "customerID"], errors="ignore")
@@ -91,7 +97,8 @@ def main() -> None:
     _y = _test_df["Churn"].to_numpy()
 
     def _downsample(xs, ys, n=100):
-        xs = np.asarray(xs); ys = np.asarray(ys)
+        xs = np.asarray(xs)
+        ys = np.asarray(ys)
         if len(xs) <= n:
             return [float(x) for x in xs], [float(y) for y in ys]
         idx = np.unique(np.round(np.linspace(0, len(xs) - 1, n)).astype(int))
@@ -99,18 +106,31 @@ def main() -> None:
 
     fpr, tpr, _ = _roc_curve(_y, _proba)
     fpr_d, tpr_d = _downsample(fpr, tpr, 100)
-    _write(out_dir / "roc_curve.json", {"fpr": fpr_d, "tpr": tpr_d, "auc": float(_roc_auc(_y, _proba))})
+    _write(
+        out_dir / "roc_curve.json", {"fpr": fpr_d, "tpr": tpr_d, "auc": float(_roc_auc(_y, _proba))}
+    )
 
     precisions, recalls, _ = _pr_curve(_y, _proba)
     r_d, p_d = _downsample(recalls, precisions, 100)
-    _write(out_dir / "pr_curve.json", {"recall": r_d, "precision": p_d, "ap": float(_ap(_y, _proba))})
+    _write(
+        out_dir / "pr_curve.json", {"recall": r_d, "precision": p_d, "ap": float(_ap(_y, _proba))}
+    )
 
     frac_uncal, mean_uncal = _calib(_y, _uncal, n_bins=10)
     frac_cal, mean_cal = _calib(_y, _proba, n_bins=10)
-    _write(out_dir / "calibration.json", {
-        "before": {"mean_predicted": [float(x) for x in mean_uncal], "fraction_positive": [float(x) for x in frac_uncal]},
-        "after": {"mean_predicted": [float(x) for x in mean_cal], "fraction_positive": [float(x) for x in frac_cal]},
-    })
+    _write(
+        out_dir / "calibration.json",
+        {
+            "before": {
+                "mean_predicted": [float(x) for x in mean_uncal],
+                "fraction_positive": [float(x) for x in frac_uncal],
+            },
+            "after": {
+                "mean_predicted": [float(x) for x in mean_cal],
+                "fraction_positive": [float(x) for x in frac_cal],
+            },
+        },
+    )
 
     # business_params.json
     _write(
@@ -123,6 +143,7 @@ def main() -> None:
     X_test = test_df.drop(columns=["Churn", "customerID"], errors="ignore")
     proba_test = calibrated.predict_proba(X_test)[:, 1]
     threshold = float(threshold_payload["threshold"])
+
     # risk bands
     def band(p):
         if p < params.api.risk_band_low:
@@ -142,7 +163,9 @@ def main() -> None:
     )
 
     base_pipeline = joblib.load(paths.models_dir / "base_pipeline.joblib")
-    explainer = build_explainer(base_pipeline, background=X_test.sample(min(200, len(X_test)), random_state=42))
+    explainer = build_explainer(
+        base_pipeline, background=X_test.sample(min(200, len(X_test)), random_state=42)
+    )
 
     examples = []
     for _, row in sampled.iterrows():
@@ -201,13 +224,14 @@ def main() -> None:
     if shap_values.ndim == 3:
         shap_values = shap_values[:, :, 1]
     importance = {
-        name: float(np.mean(np.abs(shap_values[:, i])))
-        for i, name in enumerate(explainer.readable)
+        name: float(np.mean(np.abs(shap_values[:, i]))) for i, name in enumerate(explainer.readable)
     }
     _write(out_dir / "importance.json", importance)
 
     # drift_demo.json
-    reference_stats = json.loads((paths.models_dir / "reference_stats.json").read_text(encoding="utf-8"))
+    reference_stats = json.loads(
+        (paths.models_dir / "reference_stats.json").read_text(encoding="utf-8")
+    )
     no_shift = simulate_traffic(n=300, shift=False, seed=42)
     shifted = simulate_traffic(n=300, shift=True, seed=42)
     # align columns
@@ -226,7 +250,9 @@ def main() -> None:
     # pipeline_status.json
     import subprocess
 
-    git_sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+    git_sha = subprocess.run(
+        ["git", "rev-parse", "HEAD"], check=False, capture_output=True, text=True
+    ).stdout.strip()
     _write(
         out_dir / "pipeline_status.json",
         {
@@ -239,7 +265,14 @@ def main() -> None:
 
     # copy figures
     src_fig = paths.figures_dir
-    for name in ["roc_curve.png", "pr_curve.png", "calibration_curve.png", "threshold_vs_profit.png", "shap_summary.png", "shap_bar.png"]:
+    for name in [
+        "roc_curve.png",
+        "pr_curve.png",
+        "calibration_curve.png",
+        "threshold_vs_profit.png",
+        "shap_summary.png",
+        "shap_bar.png",
+    ]:
         src = src_fig / name
         if src.is_file():
             shutil.copy(src, fig_dir / name)
