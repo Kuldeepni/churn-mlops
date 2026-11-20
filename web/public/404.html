@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>404 — churn-mlops</title>
+    <link rel="icon" type="image/svg+xml" href="/churn-mlops/favicon.svg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0b0c;
+        --surface: #121214;
+        --border: #26262a;
+        --text: #f2efe8;
+        --muted: #a9a39a;
+        --faint: #8a847b;
+        --accent: #ff5a36;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          color-scheme: light;
+          --bg: #f6f1e8;
+          --surface: #fcf9f3;
+          --border: #e1d8c9;
+          --text: #171310;
+          --muted: #5e574d;
+          --faint: #7b7367;
+          --accent: #b93310;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px 24px;
+        background:
+          linear-gradient(to right, color-mix(in srgb, var(--text) 7%, transparent) 1px, transparent 1px),
+          linear-gradient(to bottom, color-mix(in srgb, var(--text) 7%, transparent) 1px, transparent 1px),
+          var(--bg);
+        background-size: 88px 44px;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      main {
+        width: 100%;
+        max-width: 640px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: color-mix(in srgb, var(--surface) 92%, transparent);
+        padding: 32px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.25);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .brand span {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--faint);
+      }
+      .code {
+        margin: 40px 0 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: clamp(72px, 18vw, 120px);
+        font-weight: 400;
+        line-height: 0.85;
+        letter-spacing: -0.05em;
+      }
+      .code em {
+        color: var(--accent);
+        font-style: italic;
+      }
+      h1 {
+        margin: 20px 0 0;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 44ch;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 18px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      a.button.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #180906;
+      }
+      .foot {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--faint);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="/churn-mlops/">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#0B0B0C" />
+          <path
+            d="M6.5 23.2 11.4 16.6l4.6 2.5L25 8.8"
+            stroke="#FF5A36"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle cx="24.4" cy="9.4" r="2.1" fill="#FF5A36" />
+        </svg>
+        churn<span>/ mlops</span>
+      </a>
+
+      <p class="code">4<em>0</em>4</p>
+      <h1>This ledger entry does not exist.</h1>
+      <p>
+        The page you asked for was not found. The model, the data and the decisions are still one click away.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="/churn-mlops/">Back to the ledger</a>
+        <a class="button" href="https://github.com/Kuldeepni/churn-mlops">View the source</a>
+      </div>
+
+      <p class="foot">churn-mlops · static site · no entry at this address</p>
+    </main>
+  </body>
+</html>

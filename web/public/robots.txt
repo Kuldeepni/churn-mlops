@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kuldeepni.github.io/churn-mlops/sitemap.xml

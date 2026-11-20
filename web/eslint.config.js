@@ -11,4 +11,18 @@ export default tseslint.config(
     plugins: { 'react-hooks': reactHooks, 'react-refresh': reactRefresh },
     rules: { ...reactHooks.configs.recommended.rules, 'react-refresh/only-export-components': 'off', '@typescript-eslint/no-explicit-any': 'off', 'react-hooks/exhaustive-deps': 'off' },
   },
+  {
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+      },
+    },
+  },
 )

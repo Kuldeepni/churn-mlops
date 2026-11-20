@@ -62,3 +62,10 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
+
+# Visual QA captures (keep only the images referenced by the README)
+web/screenshots/*
+!web/screenshots/desktop-dark-hero.png
+!web/screenshots/desktop-light-hero.png
+!web/screenshots/desktop-dark-full.png
+!web/screenshots/mobile-dark-hero.png
