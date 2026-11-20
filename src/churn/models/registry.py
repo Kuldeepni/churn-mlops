@@ -32,6 +32,7 @@ def register_model(
     """Register the calibrated model and assign an alias (champion/challenger)."""
     settings = get_settings()
     mlflow.set_tracking_uri(settings.mlflow_tracking_uri)
+    mlflow.set_experiment(settings.mlflow_experiment)
     client = MlflowClient()
 
     model_name = settings.mlflow_registry_model

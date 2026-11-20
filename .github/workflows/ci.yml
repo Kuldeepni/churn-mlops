@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install ruff mypy
+      - run: pip install -e ".[dev]"
       - run: ruff check src tests scripts
       - run: ruff format --check src tests scripts
       - run: mypy --config-file pyproject.toml src/churn
@@ -41,6 +41,7 @@ jobs:
           path: ~/.cache/pip
           key: pip-${{ matrix.python-version }}-${{ hashFiles('requirements.lock') }}
       - run: pip install -e ".[dev]"
+      - run: dvc repro
       - run: pytest --cov=churn --cov-report=xml --cov-fail-under=65
       - uses: actions/upload-artifact@v4
         with:
