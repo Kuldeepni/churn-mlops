@@ -213,7 +213,6 @@ function Predictor({ metrics, examples, apiStatus }: any) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [cooldown, setCooldown] = useState(false)
-  const timer = useRef<any>(null)
 
   useEffect(() => {
     if (examples?.length) setForm(examples[0].features)
@@ -250,11 +249,7 @@ function Predictor({ metrics, examples, apiStatus }: any) {
     } finally { setLoading(false) }
   }
 
-  useEffect(() => {
-    if (timer.current) clearTimeout(timer.current)
-    timer.current = setTimeout(() => run(form), 500)
-    return () => clearTimeout(timer.current)
-  }, [form, apiStatus])
+  // Prediction is now triggered explicitly by the "Predict" button.
 
   const update = (k: keyof CustomerFeatures, v: any) => setForm(prev => ({ ...prev, [k]: v }))
 
@@ -329,6 +324,9 @@ function Predictor({ metrics, examples, apiStatus }: any) {
             <Field label="Total charges (read-only)">
               <input readOnly value={form.TotalCharges} className="w-full h-10 rounded-btn border border-border bg-surface-2 px-3 font-mono" />
             </Field>
+            <button onClick={()=>run(form)} disabled={loading} className="mt-4 w-full h-11 rounded-btn bg-accent text-white font-medium hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2">
+              {loading ? 'Predicting…' : 'Predict churn'}
+            </button>
             {error && <div className="mt-3 text-sm text-danger">{error} <button onClick={()=>run(form)} className="underline">Retry</button></div>}
             {cooldown && <div className="mt-3 text-sm text-warning">Rate limited. Please wait a moment.</div>}
           </Card>
