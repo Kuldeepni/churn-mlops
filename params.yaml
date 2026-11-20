@@ -39,9 +39,9 @@ model:
     - logistic
     - lightgbm
   logistic:
-    C: 1.0
-    class_weight: balanced
-    max_iter: 2000
+    C: 0.103
+    class_weight: "none"
+    max_iter: 1056
   lightgbm:
     n_estimators: 400
     learning_rate: 0.05
@@ -77,7 +77,7 @@ threshold:
 
 evaluation:
   # Quality gate. Values are set from the observed baseline with a safety margin.
-  min_pr_auc: 0.55
+  min_pr_auc: 0.60
   min_recall: 0.40
   bootstrap_iterations: 1000
 
