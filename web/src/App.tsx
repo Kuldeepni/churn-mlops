@@ -206,7 +206,8 @@ function Gauge({ value, threshold }: { value: number; threshold: number }) {
 // ---------- PREDICT ----------
 function Predictor({ metrics, examples, apiStatus }: any) {
   const threshold = metrics?.test?.threshold ?? 0.18
-  const [form, setForm] = useState<CustomerFeatures>(() => examples?.[0]?.features ?? {})
+  const DEFAULT_FORM: CustomerFeatures = { gender:'Female', SeniorCitizen:'No', Partner:'Yes', Dependents:'No', tenure:12, PhoneService:'Yes', MultipleLines:'No', InternetService:'DSL', OnlineSecurity:'No', OnlineBackup:'Yes', DeviceProtection:'No', TechSupport:'No', StreamingTV:'No', StreamingMovies:'No', Contract:'Month-to-month', PaperlessBilling:'Yes', PaymentMethod:'Electronic check', MonthlyCharges:50, TotalCharges:600 }
+  const [form, setForm] = useState<CustomerFeatures>(() => examples?.[0]?.features ?? DEFAULT_FORM)
   const [preset, setPreset] = useState('high')
   const [result, setResult] = useState<Prediction | null>(null)
   const [loading, setLoading] = useState(false)
