@@ -27,7 +27,7 @@ dependencies = [
   "numpy>=1.26,<2.2",
   "scikit-learn>=1.6,<2",
   "lightgbm>=4.5,<5",
-  "optuna>=4.0,<5",
+  "optuna>=4.0,<6",
   "shap>=0.45,<1",
   # numba is a shap dependency; pinned for reproducible wheels (see docs/decisions.md).
   "numba>=0.59,<0.62",
