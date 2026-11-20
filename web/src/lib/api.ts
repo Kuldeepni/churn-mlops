@@ -8,7 +8,6 @@ export interface CustomerFeatures {
 export interface TopFactor { feature: string; impact: number; direction: 'increases_churn' | 'decreases_churn' }
 export interface Prediction { churn_probability: number; will_churn: boolean; risk_band: 'low'|'medium'|'high'; top_factors: TopFactor[] }
 export interface PredictResponse { predictions: Prediction[]; model_version: string; threshold: number; request_id?: string }
-export interface HealthResponse { status: string }
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://kuldeepni-churn-mlops-api.hf.space'
 
@@ -33,13 +32,12 @@ export async function fetchWithRetry(url: string, options: RequestInit, retries 
   }
   throw lastErr || new Error('Request failed')
 }
-
-export async function healthCheck(): Promise<HealthResponse> {
+export async function healthCheck() {
   const res = await fetchWithRetry(`${API_URL}/health`, { method: 'GET' }, 2)
   if (!res.ok) throw new Error('Health check failed')
   return res.json()
 }
-export async function predict(instances: CustomerFeatures[], explain = true): Promise<PredictResponse> {
+export async function predict(instances: CustomerFeatures[], explain = true): Promise<Prediction> {
   const res = await fetchWithRetry(`${API_URL}/predict?explain=${explain}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Request-ID': crypto.randomUUID() },
@@ -49,6 +47,7 @@ export async function predict(instances: CustomerFeatures[], explain = true): Pr
     const err = await res.json().catch(() => ({}))
     throw new Error(err.detail || err.error || `HTTP ${res.status}`)
   }
-  return res.json()
+  const data: PredictResponse = await res.json()
+  return data.predictions[0]
 }
 export { API_URL }

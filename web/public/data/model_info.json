@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "git_sha": "testsha",
-  "trained_at": "2026-11-13T11:40:07.349547+00:00",
+  "git_sha": "512e4d073c598bca34b367a772718fe9faa4e883",
+  "trained_at": "2026-11-20T10:21:17.645601+00:00",
   "feature_list": [
     "gender",
     "SeniorCitizen",

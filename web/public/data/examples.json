@@ -1,7 +1,93 @@
 [
   {
     "features": {
-      "gender": "Male",
+      "gender": "Female",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 1,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 74.5,
+      "TotalCharges": 74.5
+    },
+    "churn_probability": 0.8857,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "charge_to_tenure_ratio",
+        "impact": 1.299267233529502,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "Yes",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 2,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "DSL",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 56.55,
+      "TotalCharges": 118.25
+    },
+    "churn_probability": 0.5625,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.6841967852918814,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.39145402115652755,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
       "SeniorCitizen": "No",
       "Partner": "No",
       "Dependents": "No",
@@ -14,30 +100,30 @@
       "DeviceProtection": "No",
       "TechSupport": "No",
       "StreamingTV": "No",
-      "StreamingMovies": "Yes",
+      "StreamingMovies": "No",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 85.3,
-      "TotalCharges": 264.8
+      "MonthlyCharges": 75.5,
+      "TotalCharges": 220.6
     },
-    "churn_probability": 1.0,
+    "churn_probability": 0.8857,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5651618635022706,
+        "feature": "tenure",
+        "impact": 0.661413009557886,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7550006577310868,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.44070118759681065,
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.33040943341268064,
         "direction": "increases_churn"
       }
     ]
@@ -70,17 +156,17 @@
     "top_factors": [
       {
         "feature": "charge_to_tenure_ratio",
-        "impact": 1.5321302355301307,
+        "impact": 1.7038308284431474,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7440747618245135,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4861692158744179,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       }
     ]
@@ -94,7 +180,7 @@
       "tenure": 1,
       "PhoneService": "Yes",
       "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
+      "InternetService": "DSL",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
       "DeviceProtection": "No",
@@ -103,70 +189,27 @@
       "StreamingMovies": "No",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 74.5,
-      "TotalCharges": 74.5
+      "PaymentMethod": "Bank transfer (automatic)",
+      "MonthlyCharges": 49.95,
+      "TotalCharges": 49.95
     },
-    "churn_probability": 0.6337,
+    "churn_probability": 0.6376,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
         "feature": "charge_to_tenure_ratio",
-        "impact": 1.5624737717308639,
+        "impact": 0.8171295512416378,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7237694084056981,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "MonthlyCharges",
-        "impact": -0.487662425957052,
-        "direction": "decreases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 16,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 96.4,
-      "TotalCharges": 1581.2
-    },
-    "churn_probability": 1.0,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.2147983599570373,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.659354938955904,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5135108189195465,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       }
     ]
@@ -175,41 +218,41 @@
     "features": {
       "gender": "Male",
       "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "Yes",
-      "tenure": 22,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 1,
+      "PhoneService": "No",
+      "MultipleLines": "No phone service",
+      "InternetService": "DSL",
       "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "Yes",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "No",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "No",
+      "TechSupport": "Yes",
+      "StreamingTV": "No",
+      "StreamingMovies": "Yes",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 88.75,
-      "TotalCharges": 1885.15
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 44.65,
+      "TotalCharges": 44.65
     },
-    "churn_probability": 0.8106,
+    "churn_probability": 0.6376,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
         "feature": "charge_to_tenure_ratio",
-        "impact": 1.1656701046309428,
+        "impact": 0.7130428010939523,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.6515314034901073,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5040785357887136,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       }
     ]
@@ -218,7 +261,7 @@
     "features": {
       "gender": "Female",
       "SeniorCitizen": "Yes",
-      "Partner": "Yes",
+      "Partner": "No",
       "Dependents": "No",
       "tenure": 4,
       "PhoneService": "Yes",
@@ -228,203 +271,31 @@
       "OnlineBackup": "No",
       "DeviceProtection": "No",
       "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 83.25,
-      "TotalCharges": 308.05
-    },
-    "churn_probability": 1.0,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5449407151655288,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.7475476869737995,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4831080984497714,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 34,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 106.35,
-      "TotalCharges": 3549.25
-    },
-    "churn_probability": 1.0,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0311724374308455,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.646035737264759,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5163615679826948,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 14,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 104.85,
-      "TotalCharges": 1531.4
-    },
-    "churn_probability": 1.0,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.3959256977534407,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6793185851234325,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.53732660316381,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 14,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 95.6,
-      "TotalCharges": 1273.3
-    },
-    "churn_probability": 1.0,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.3951307267714186,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.693018895911636,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5082844834429918,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 2,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
       "StreamingTV": "No",
       "StreamingMovies": "Yes",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 84.05,
-      "TotalCharges": 186.05
+      "MonthlyCharges": 84.6,
+      "TotalCharges": 360.1
     },
-    "churn_probability": 1.0,
+    "churn_probability": 0.8857,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5746961230195409,
+        "feature": "tenure",
+        "impact": 0.6386292338238906,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7600353792399606,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.44098358143626326,
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.25152607874100696,
         "direction": "increases_churn"
       }
     ]
@@ -435,126 +306,83 @@
       "SeniorCitizen": "No",
       "Partner": "Yes",
       "Dependents": "Yes",
-      "tenure": 1,
+      "tenure": 11,
       "PhoneService": "Yes",
-      "MultipleLines": "Yes",
+      "MultipleLines": "No",
       "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
       "DeviceProtection": "No",
       "TechSupport": "No",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
       "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
+      "PaperlessBilling": "No",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 74.5,
-      "TotalCharges": 74.5
+      "MonthlyCharges": 90.6,
+      "TotalCharges": 1020.2
     },
-    "churn_probability": 0.7037,
+    "churn_probability": 0.6376,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5272574272084998,
+        "feature": "tenure",
+        "impact": 0.4791428036859228,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7309730145503541,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "MonthlyCharges",
-        "impact": -0.48098317856201345,
-        "direction": "decreases_churn"
+        "feature": "avg_monthly_spend",
+        "impact": 0.22778527254784833,
+        "direction": "increases_churn"
       }
     ]
   },
   {
     "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
+      "gender": "Male",
+      "SeniorCitizen": "Yes",
       "Partner": "No",
       "Dependents": "No",
       "tenure": 3,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 74.95,
-      "TotalCharges": 212.4
-    },
-    "churn_probability": 0.8037,
-    "will_churn": true,
-    "risk_band": "high",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5651697688183588,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.729815962651035,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.42248216311878395,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 1,
       "PhoneService": "No",
       "MultipleLines": "No phone service",
       "InternetService": "DSL",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
-      "DeviceProtection": "No",
+      "DeviceProtection": "Yes",
       "TechSupport": "No",
       "StreamingTV": "No",
-      "StreamingMovies": "No",
+      "StreamingMovies": "Yes",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 24.8,
-      "TotalCharges": 24.8
+      "MonthlyCharges": 41.15,
+      "TotalCharges": 132.2
     },
-    "churn_probability": 0.6943,
+    "churn_probability": 0.6376,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.573882725883841,
+        "feature": "tenure",
+        "impact": 0.661413009557886,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7361510426320379,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4190386659840393,
-        "direction": "increases_churn"
+        "feature": "InternetService_DSL",
+        "impact": -0.17352245263483135,
+        "direction": "decreases_churn"
       }
     ]
   },
@@ -562,41 +390,41 @@
     "features": {
       "gender": "Male",
       "SeniorCitizen": "No",
-      "Partner": "Yes",
+      "Partner": "No",
       "Dependents": "No",
-      "tenure": 2,
+      "tenure": 1,
       "PhoneService": "Yes",
       "MultipleLines": "No",
       "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
       "DeviceProtection": "No",
-      "TechSupport": "Yes",
+      "TechSupport": "No",
       "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
+      "StreamingMovies": "No",
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 94.2,
-      "TotalCharges": 167.5
+      "MonthlyCharges": 79.5,
+      "TotalCharges": 79.5
     },
-    "churn_probability": 1.0,
+    "churn_probability": 0.8857,
     "will_churn": true,
     "risk_band": "high",
     "top_factors": [
       {
         "feature": "charge_to_tenure_ratio",
-        "impact": 1.5982107800288003,
+        "impact": 1.3974622808386394,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7517958363779235,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5059923345294034,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       }
     ]
@@ -605,170 +433,299 @@
     "features": {
       "gender": "Female",
       "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 9,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "Yes",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 79.75,
+      "TotalCharges": 769.1
+    },
+    "churn_probability": 0.6376,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.5247103551539136,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
       "Partner": "No",
       "Dependents": "No",
-      "tenure": 23,
+      "tenure": 4,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "Yes",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 79.9,
+      "TotalCharges": 324.3
+    },
+    "churn_probability": 0.6376,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.6386292338238906,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.22845024262335975,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "Yes",
+      "tenure": 1,
       "PhoneService": "Yes",
       "MultipleLines": "Yes",
       "InternetService": "DSL",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
       "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 50.05,
+      "TotalCharges": 50.05
+    },
+    "churn_probability": 0.6376,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.8190934521878204,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 5,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 69.7,
+      "TotalCharges": 316.9
+    },
+    "churn_probability": 0.6376,
+    "will_churn": true,
+    "risk_band": "high",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.6158454580898953,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "Yes",
+      "tenure": 29,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "No",
+      "OnlineSecurity": "No internet service",
+      "OnlineBackup": "No internet service",
+      "DeviceProtection": "No internet service",
+      "TechSupport": "No internet service",
+      "StreamingTV": "No internet service",
+      "StreamingMovies": "No internet service",
+      "Contract": "One year",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 19.85,
+      "TotalCharges": 535.05
+    },
+    "churn_probability": 0.0337,
+    "will_churn": false,
+    "risk_band": "low",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": -0.3355282987506011,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_One year",
+        "impact": 0.21231993245743708,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 67,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "Yes",
       "TechSupport": "Yes",
       "StreamingTV": "Yes",
       "StreamingMovies": "Yes",
       "Contract": "One year",
       "PaperlessBilling": "Yes",
-      "PaymentMethod": "Mailed check",
-      "MonthlyCharges": 73.75,
-      "TotalCharges": 1756.6
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 109.7,
+      "TotalCharges": 7344.45
     },
-    "churn_probability": 0.1,
+    "churn_probability": 0.1528,
     "will_churn": false,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0620696432951828,
-        "direction": "increases_churn"
+        "feature": "tenure",
+        "impact": -0.7967486374178185,
+        "direction": "decreases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": -0.6010802787177317,
+        "impact": -0.503887891565839,
         "direction": "decreases_churn"
       },
       {
-        "feature": "MonthlyCharges",
-        "impact": -0.5033510302034584,
-        "direction": "decreases_churn"
+        "feature": "TotalCharges",
+        "impact": 0.3913052903061884,
+        "direction": "increases_churn"
       }
     ]
   },
   {
     "features": {
       "gender": "Female",
-      "SeniorCitizen": "No",
+      "SeniorCitizen": "Yes",
       "Partner": "No",
       "Dependents": "No",
-      "tenure": 68,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "DSL",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "Yes",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Two year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 88.15,
-      "TotalCharges": 6148.45
-    },
-    "churn_probability": 0.1,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.9133300551325717,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.5956736822481169,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.48552098548273787,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "Yes",
-      "tenure": 15,
+      "tenure": 46,
       "PhoneService": "Yes",
       "MultipleLines": "No",
       "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "No",
-      "PaymentMethod": "Bank transfer (automatic)",
-      "MonthlyCharges": 69.0,
-      "TotalCharges": 994.8
-    },
-    "churn_probability": 0.1,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0758768482806782,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6922848444899675,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "MonthlyCharges",
-        "impact": -0.3328266256297,
-        "direction": "decreases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "Yes",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 72,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "Yes",
       "OnlineBackup": "Yes",
       "DeviceProtection": "Yes",
-      "TechSupport": "Yes",
-      "StreamingTV": "No",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
       "StreamingMovies": "No",
-      "Contract": "Two year",
+      "Contract": "One year",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Bank transfer (automatic)",
-      "MonthlyCharges": 93.05,
-      "TotalCharges": 6735.05
+      "MonthlyCharges": 91.3,
+      "TotalCharges": 4126.35
     },
-    "churn_probability": 0.1,
-    "will_churn": false,
+    "churn_probability": 0.2,
+    "will_churn": true,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.8153362230704932,
-        "direction": "decreases_churn"
-      },
-      {
         "feature": "is_month_to_month",
-        "impact": -0.6109876300027428,
+        "impact": -0.503887891565839,
         "direction": "decreases_churn"
       },
       {
-        "feature": "TotalCharges",
-        "impact": 0.5291532424379147,
+        "feature": "tenure",
+        "impact": -0.31828934700391553,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_One year",
+        "impact": 0.21231993245743708,
         "direction": "increases_churn"
       }
     ]
@@ -777,54 +734,11 @@
     "features": {
       "gender": "Male",
       "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "Yes",
-      "tenure": 72,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "No",
-      "OnlineSecurity": "No internet service",
-      "OnlineBackup": "No internet service",
-      "DeviceProtection": "No internet service",
-      "TechSupport": "No internet service",
-      "StreamingTV": "No internet service",
-      "StreamingMovies": "No internet service",
-      "Contract": "Two year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Credit card (automatic)",
-      "MonthlyCharges": 25.1,
-      "TotalCharges": 1790.8
-    },
-    "churn_probability": 0.0,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.9458666625629762,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.6363160866783188,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "TotalCharges",
-        "impact": -0.2790958250103123,
-        "direction": "decreases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
+      "Partner": "No",
       "Dependents": "No",
-      "tenure": 34,
+      "tenure": 1,
       "PhoneService": "Yes",
-      "MultipleLines": "Yes",
+      "MultipleLines": "No",
       "InternetService": "No",
       "OnlineSecurity": "No internet service",
       "OnlineBackup": "No internet service",
@@ -834,28 +748,28 @@
       "StreamingMovies": "No internet service",
       "Contract": "Month-to-month",
       "PaperlessBilling": "No",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 24.7,
-      "TotalCharges": 780.2
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 19.95,
+      "TotalCharges": 19.95
     },
-    "churn_probability": 0.1,
-    "will_churn": false,
+    "churn_probability": 0.2,
+    "will_churn": true,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -1.1196018765596765,
-        "direction": "decreases_churn"
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
+        "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.6946427648569219,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.45357230356108214,
-        "direction": "increases_churn"
+        "feature": "avg_monthly_spend",
+        "impact": -0.3241551890211127,
+        "direction": "decreases_churn"
       }
     ]
   },
@@ -867,6 +781,92 @@
       "Dependents": "No",
       "tenure": 50,
       "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "No",
+      "OnlineSecurity": "No internet service",
+      "OnlineBackup": "No internet service",
+      "DeviceProtection": "No internet service",
+      "TechSupport": "No internet service",
+      "StreamingTV": "No internet service",
+      "StreamingMovies": "No internet service",
+      "Contract": "Two year",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 19.8,
+      "TotalCharges": 1013.2
+    },
+    "churn_probability": 0.0122,
+    "will_churn": false,
+    "risk_band": "low",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": -0.409424449939897,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_Two year",
+        "impact": -0.36241247638385443,
+        "direction": "decreases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 29,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "DSL",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "Yes",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "No",
+      "Contract": "One year",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Bank transfer (automatic)",
+      "MonthlyCharges": 69.05,
+      "TotalCharges": 1958.45
+    },
+    "churn_probability": 0.0492,
+    "will_churn": false,
+    "risk_band": "low",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_One year",
+        "impact": 0.21231993245743708,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_DSL",
+        "impact": -0.17352245263483135,
+        "direction": "decreases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 70,
+      "PhoneService": "Yes",
       "MultipleLines": "Yes",
       "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
@@ -875,30 +875,30 @@
       "TechSupport": "No",
       "StreamingTV": "Yes",
       "StreamingMovies": "Yes",
-      "Contract": "One year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 98.25,
-      "TotalCharges": 4858.7
+      "Contract": "Two year",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Bank transfer (automatic)",
+      "MonthlyCharges": 98.3,
+      "TotalCharges": 6859.5
     },
-    "churn_probability": 0.1,
+    "churn_probability": 0.0492,
     "will_churn": false,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -1.1250950422045896,
+        "feature": "tenure",
+        "impact": -0.8650999646198047,
         "direction": "decreases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": -0.5863013682240292,
+        "impact": -0.503887891565839,
         "direction": "decreases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4848178271723871,
-        "direction": "increases_churn"
+        "feature": "Contract_Two year",
+        "impact": -0.36241247638385443,
+        "direction": "decreases_churn"
       }
     ]
   },
@@ -908,93 +908,50 @@
       "SeniorCitizen": "No",
       "Partner": "Yes",
       "Dependents": "No",
-      "tenure": 46,
-      "PhoneService": "No",
-      "MultipleLines": "No phone service",
-      "InternetService": "DSL",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "No",
-      "DeviceProtection": "Yes",
-      "TechSupport": "Yes",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Two year",
-      "PaperlessBilling": "No",
-      "PaymentMethod": "Credit card (automatic)",
-      "MonthlyCharges": 40.4,
-      "TotalCharges": 1842.7
-    },
-    "churn_probability": 0.0,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -1.0242447716851169,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.6284551345864193,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "TotalCharges",
-        "impact": -0.2830505431090653,
-        "direction": "decreases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 53,
+      "tenure": 64,
       "PhoneService": "Yes",
       "MultipleLines": "No",
       "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "Yes",
-      "StreamingTV": "Yes",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
       "StreamingMovies": "No",
-      "Contract": "One year",
+      "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 94.0,
-      "TotalCharges": 4871.45
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 73.55,
+      "TotalCharges": 4764.0
     },
-    "churn_probability": 0.1,
+    "churn_probability": 0.1339,
     "will_churn": false,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -1.1071449618025495,
+        "feature": "tenure",
+        "impact": -0.7283973102158323,
         "direction": "decreases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": -0.5795637682438016,
-        "direction": "decreases_churn"
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5111525104427084,
-        "direction": "increases_churn"
+        "feature": "tenure_bucket_60m+",
+        "impact": -0.21598490077151322,
+        "direction": "decreases_churn"
       }
     ]
   },
   {
     "features": {
-      "gender": "Female",
+      "gender": "Male",
       "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 67,
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 52,
       "PhoneService": "Yes",
       "MultipleLines": "No",
       "InternetService": "No",
@@ -1005,373 +962,29 @@
       "StreamingTV": "No internet service",
       "StreamingMovies": "No internet service",
       "Contract": "One year",
-      "PaperlessBilling": "No",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 20.55,
-      "TotalCharges": 1343.4
-    },
-    "churn_probability": 0.0,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.9948594881120766,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.6254550979002692,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.49468258548524036,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "Yes",
-      "tenure": 72,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "DSL",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "Yes",
-      "StreamingTV": "No",
-      "StreamingMovies": "Yes",
-      "Contract": "Two year",
-      "PaperlessBilling": "No",
+      "PaperlessBilling": "Yes",
       "PaymentMethod": "Credit card (automatic)",
-      "MonthlyCharges": 81.0,
-      "TotalCharges": 5750.0
+      "MonthlyCharges": 20.85,
+      "TotalCharges": 1071.6
     },
-    "churn_probability": 0.1,
+    "churn_probability": 0.0337,
     "will_churn": false,
     "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.8998084082026018,
-        "direction": "decreases_churn"
-      },
-      {
         "feature": "is_month_to_month",
-        "impact": -0.6429923028411504,
+        "impact": -0.503887891565839,
         "direction": "decreases_churn"
       },
       {
-        "feature": "TotalCharges",
-        "impact": 0.2835263853395051,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 71,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "Yes",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Two year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Bank transfer (automatic)",
-      "MonthlyCharges": 105.15,
-      "TotalCharges": 7555.0
-    },
-    "churn_probability": 0.1,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": -0.8446306670929279,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.5895396344586457,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "TotalCharges",
-        "impact": 0.4976849256207166,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 11,
-      "PhoneService": "No",
-      "MultipleLines": "No phone service",
-      "InternetService": "DSL",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "Yes",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "No",
-      "Contract": "One year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 41.6,
-      "TotalCharges": 470.6
-    },
-    "churn_probability": 0.1,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.091812403614641,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.630099754236642,
-        "direction": "decreases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.546872586848998,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "Yes",
-      "tenure": 28,
-      "PhoneService": "Yes",
-      "MultipleLines": "No",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "One year",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Bank transfer (automatic)",
-      "MonthlyCharges": 90.1,
-      "TotalCharges": 2598.95
-    },
-    "churn_probability": 0.1,
-    "will_churn": false,
-    "risk_band": "low",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.1020491863707667,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.6080305975724123,
+        "feature": "tenure",
+        "impact": -0.4549920014078878,
         "direction": "decreases_churn"
       },
       {
         "feature": "avg_monthly_spend",
-        "impact": 0.4078300512293796,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "Yes",
-      "tenure": 30,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "Yes",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 101.3,
-      "TotalCharges": 2974.5
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.1455846089621615,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6372022547323225,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5166924769457942,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 1,
-      "PhoneService": "No",
-      "MultipleLines": "No phone service",
-      "InternetService": "DSL",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "No",
-      "PaymentMethod": "Mailed check",
-      "MonthlyCharges": 25.05,
-      "TotalCharges": 25.05
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5503540576038897,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.7586863604351413,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "tenure",
-        "impact": 0.3349481710186527,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "Yes",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 35,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "No",
-      "TechSupport": "Yes",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Bank transfer (automatic)",
-      "MonthlyCharges": 100.5,
-      "TotalCharges": 3653.35
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 0.9598523553204873,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6756832190293699,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "avg_monthly_spend",
-        "impact": 0.44216248961377785,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Female",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 1,
-      "PhoneService": "Yes",
-      "MultipleLines": "No",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "No",
-      "PaymentMethod": "Mailed check",
-      "MonthlyCharges": 75.3,
-      "TotalCharges": 75.3
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5901492141642872,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.769353285854398,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "tenure",
-        "impact": 0.35141271845679745,
-        "direction": "increases_churn"
+        "impact": -0.3191685178320293,
+        "direction": "decreases_churn"
       }
     ]
   },
@@ -1397,24 +1010,24 @@
       "MonthlyCharges": 19.55,
       "TotalCharges": 61.05
     },
-    "churn_probability": 0.3889,
+    "churn_probability": 0.2,
     "will_churn": true,
-    "risk_band": "medium",
+    "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.3458372417461841,
+        "feature": "tenure",
+        "impact": 0.661413009557886,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7518128490823706,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5094485969089122,
-        "direction": "increases_churn"
+        "feature": "avg_monthly_spend",
+        "impact": -0.3211223597599158,
+        "direction": "decreases_churn"
       }
     ]
   },
@@ -1423,96 +1036,10 @@
       "gender": "Male",
       "SeniorCitizen": "Yes",
       "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 29,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "Yes",
-      "StreamingTV": "No",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 79.3,
-      "TotalCharges": 2414.55
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0418736441922245,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6493695642452214,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4511945146940701,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "Yes",
-      "Dependents": "No",
-      "tenure": 22,
+      "Dependents": "Yes",
+      "tenure": 72,
       "PhoneService": "Yes",
       "MultipleLines": "No",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "Yes",
-      "OnlineBackup": "Yes",
-      "DeviceProtection": "No",
-      "TechSupport": "Yes",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "Yes",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 104.6,
-      "TotalCharges": 2180.55
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.1596418304685705,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": 0.6746265780908925,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5356244218242677,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 35,
-      "PhoneService": "Yes",
-      "MultipleLines": "Yes",
       "InternetService": "Fiber optic",
       "OnlineSecurity": "Yes",
       "OnlineBackup": "No",
@@ -1522,113 +1049,113 @@
       "StreamingMovies": "Yes",
       "Contract": "Two year",
       "PaperlessBilling": "Yes",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 108.95,
-      "TotalCharges": 4025.5
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 104.1,
+      "TotalCharges": 7447.7
     },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
+    "churn_probability": 0.0337,
+    "will_churn": false,
+    "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0659526576897262,
-        "direction": "increases_churn"
-      },
-      {
-        "feature": "is_month_to_month",
-        "impact": -0.5842478869159293,
+        "feature": "tenure",
+        "impact": -0.9106675160877955,
         "direction": "decreases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.5261470852593367,
-        "direction": "increases_churn"
-      }
-    ]
-  },
-  {
-    "features": {
-      "gender": "Male",
-      "SeniorCitizen": "No",
-      "Partner": "No",
-      "Dependents": "No",
-      "tenure": 6,
-      "PhoneService": "Yes",
-      "MultipleLines": "No",
-      "InternetService": "Fiber optic",
-      "OnlineSecurity": "No",
-      "OnlineBackup": "No",
-      "DeviceProtection": "No",
-      "TechSupport": "No",
-      "StreamingTV": "Yes",
-      "StreamingMovies": "No",
-      "Contract": "Month-to-month",
-      "PaperlessBilling": "Yes",
-      "PaymentMethod": "Credit card (automatic)",
-      "MonthlyCharges": 80.5,
-      "TotalCharges": 463.05
-    },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
-    "top_factors": [
-      {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.3344076848050732,
-        "direction": "increases_churn"
-      },
-      {
         "feature": "is_month_to_month",
-        "impact": 0.7639325812505884,
-        "direction": "increases_churn"
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
       },
       {
-        "feature": "Contract_Month-to-month",
-        "impact": 0.2787542674488502,
+        "feature": "TotalCharges",
+        "impact": 0.39915537212491786,
         "direction": "increases_churn"
       }
     ]
   },
   {
     "features": {
-      "gender": "Male",
+      "gender": "Female",
       "SeniorCitizen": "Yes",
       "Partner": "No",
       "Dependents": "No",
-      "tenure": 2,
+      "tenure": 71,
       "PhoneService": "Yes",
-      "MultipleLines": "No",
-      "InternetService": "DSL",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "Yes",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
+      "Contract": "Two year",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Bank transfer (automatic)",
+      "MonthlyCharges": 104.05,
+      "TotalCharges": 7413.55
+    },
+    "churn_probability": 0.1339,
+    "will_churn": false,
+    "risk_band": "low",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": -0.8878837403538,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "TotalCharges",
+        "impact": 0.39655895281150766,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 52,
+      "PhoneService": "No",
+      "MultipleLines": "No phone service",
+      "InternetService": "DSL",
+      "OnlineSecurity": "Yes",
       "OnlineBackup": "No",
       "DeviceProtection": "Yes",
       "TechSupport": "No",
       "StreamingTV": "No",
       "StreamingMovies": "No",
-      "Contract": "Month-to-month",
+      "Contract": "One year",
       "PaperlessBilling": "No",
       "PaymentMethod": "Mailed check",
-      "MonthlyCharges": 49.95,
-      "TotalCharges": 107.1
+      "MonthlyCharges": 35.45,
+      "TotalCharges": 1958.95
     },
-    "churn_probability": 0.3889,
-    "will_churn": true,
-    "risk_band": "medium",
+    "churn_probability": 0.1081,
+    "will_churn": false,
+    "risk_band": "low",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5193169494368273,
-        "direction": "increases_churn"
-      },
-      {
         "feature": "is_month_to_month",
-        "impact": 0.7658899665797974,
-        "direction": "increases_churn"
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
       },
       {
-        "feature": "Contract_Month-to-month",
-        "impact": 0.2814199388247071,
+        "feature": "tenure",
+        "impact": -0.4549920014078878,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_One year",
+        "impact": 0.21231993245743708,
         "direction": "increases_churn"
       }
     ]
@@ -1639,12 +1166,227 @@
       "SeniorCitizen": "No",
       "Partner": "Yes",
       "Dependents": "Yes",
-      "tenure": 9,
-      "PhoneService": "No",
-      "MultipleLines": "No phone service",
-      "InternetService": "DSL",
+      "tenure": 28,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "No",
+      "OnlineSecurity": "No internet service",
+      "OnlineBackup": "No internet service",
+      "DeviceProtection": "No internet service",
+      "TechSupport": "No internet service",
+      "StreamingTV": "No internet service",
+      "StreamingMovies": "No internet service",
+      "Contract": "Two year",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 20.3,
+      "TotalCharges": 487.95
+    },
+    "churn_probability": 0.0122,
+    "will_churn": false,
+    "risk_band": "low",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "Contract_Two year",
+        "impact": -0.36241247638385443,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": -0.3432863843160736,
+        "direction": "decreases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "Yes",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 36,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 90.85,
+      "TotalCharges": 3186.7
+    },
+    "churn_probability": 0.4483,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.1957433548167054,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 53,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "No",
+      "DeviceProtection": "Yes",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
+      "Contract": "One year",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 106.95,
+      "TotalCharges": 5785.5
+    },
+    "churn_probability": 0.2772,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": -0.47777577714188324,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.35224441811700924,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 49,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
       "OnlineSecurity": "No",
       "OnlineBackup": "Yes",
+      "DeviceProtection": "Yes",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "No",
+      "Contract": "One year",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 93.65,
+      "TotalCharges": 4520.15
+    },
+    "churn_probability": 0.2772,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": -0.3866406742059017,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.22401322632154974,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "Yes",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 19,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "No",
+      "TechSupport": "Yes",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 105.0,
+      "TotalCharges": 2007.25
+    },
+    "churn_probability": 0.3396,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.32558857454215234,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.2968725978139598,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "Yes",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 55,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
       "DeviceProtection": "No",
       "TechSupport": "No",
       "StreamingTV": "No",
@@ -1652,26 +1394,26 @@
       "Contract": "Month-to-month",
       "PaperlessBilling": "Yes",
       "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 29.95,
-      "TotalCharges": 248.95
+      "MonthlyCharges": 74.0,
+      "TotalCharges": 4052.4
     },
-    "churn_probability": 0.3889,
+    "churn_probability": 0.4483,
     "will_churn": true,
     "risk_band": "medium",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.0551309349973848,
-        "direction": "increases_churn"
+        "feature": "tenure",
+        "impact": -0.523343328609874,
+        "direction": "decreases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7083731373196644,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4609921878176402,
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
         "direction": "increases_churn"
       }
     ]
@@ -1682,9 +1424,224 @@
       "SeniorCitizen": "No",
       "Partner": "No",
       "Dependents": "No",
-      "tenure": 1,
+      "tenure": 10,
       "PhoneService": "Yes",
       "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "Yes",
+      "TechSupport": "Yes",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 110.1,
+      "TotalCharges": 1043.3
+    },
+    "churn_probability": 0.48,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.5019265794199183,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.31562014362837615,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 12,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "DSL",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "Yes",
+      "TechSupport": "No",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Credit card (automatic)",
+      "MonthlyCharges": 58.35,
+      "TotalCharges": 740.55
+    },
+    "churn_probability": 0.2772,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.45635902795192745,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_DSL",
+        "impact": -0.17352245263483135,
+        "direction": "decreases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Female",
+      "SeniorCitizen": "Yes",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 50,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 71.05,
+      "TotalCharges": 3444.85
+    },
+    "churn_probability": 0.3396,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": -0.409424449939897,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "No",
+      "tenure": 12,
+      "PhoneService": "Yes",
+      "MultipleLines": "No",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "Yes",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "Yes",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 84.6,
+      "TotalCharges": 959.9
+    },
+    "churn_probability": 0.3396,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "tenure",
+        "impact": 0.45635902795192745,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "impact": 0.1808114542599532,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "No",
+      "tenure": 16,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "DSL",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "Yes",
+      "DeviceProtection": "No",
+      "TechSupport": "No",
+      "StreamingTV": "No",
+      "StreamingMovies": "No",
+      "Contract": "Month-to-month",
+      "PaperlessBilling": "No",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 55.3,
+      "TotalCharges": 875.35
+    },
+    "churn_probability": 0.2772,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": 0.3959119148017306,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": 0.3652239250159459,
+        "direction": "increases_churn"
+      },
+      {
+        "feature": "InternetService_DSL",
+        "impact": -0.17352245263483135,
+        "direction": "decreases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "No",
+      "Dependents": "Yes",
+      "tenure": 1,
+      "PhoneService": "No",
+      "MultipleLines": "No phone service",
       "InternetService": "DSL",
       "OnlineSecurity": "No",
       "OnlineBackup": "No",
@@ -1694,27 +1651,70 @@
       "StreamingMovies": "No",
       "Contract": "Month-to-month",
       "PaperlessBilling": "No",
-      "PaymentMethod": "Electronic check",
-      "MonthlyCharges": 44.0,
-      "TotalCharges": 44.0
+      "PaymentMethod": "Mailed check",
+      "MonthlyCharges": 24.2,
+      "TotalCharges": 24.2
     },
-    "churn_probability": 0.3889,
+    "churn_probability": 0.4483,
     "will_churn": true,
     "risk_band": "medium",
     "top_factors": [
       {
-        "feature": "charge_to_tenure_ratio",
-        "impact": 1.5795858750693414,
+        "feature": "tenure",
+        "impact": 0.7069805610258767,
         "direction": "increases_churn"
       },
       {
         "feature": "is_month_to_month",
-        "impact": 0.7461376397724813,
+        "impact": 0.3959119148017306,
         "direction": "increases_churn"
       },
       {
-        "feature": "PaymentMethod_Electronic check",
-        "impact": 0.4411672922586021,
+        "feature": "charge_to_tenure_ratio",
+        "impact": 0.3114250575995807,
+        "direction": "increases_churn"
+      }
+    ]
+  },
+  {
+    "features": {
+      "gender": "Male",
+      "SeniorCitizen": "No",
+      "Partner": "Yes",
+      "Dependents": "Yes",
+      "tenure": 49,
+      "PhoneService": "Yes",
+      "MultipleLines": "Yes",
+      "InternetService": "Fiber optic",
+      "OnlineSecurity": "No",
+      "OnlineBackup": "No",
+      "DeviceProtection": "No",
+      "TechSupport": "Yes",
+      "StreamingTV": "Yes",
+      "StreamingMovies": "Yes",
+      "Contract": "One year",
+      "PaperlessBilling": "Yes",
+      "PaymentMethod": "Electronic check",
+      "MonthlyCharges": 97.95,
+      "TotalCharges": 4917.9
+    },
+    "churn_probability": 0.2772,
+    "will_churn": true,
+    "risk_band": "medium",
+    "top_factors": [
+      {
+        "feature": "is_month_to_month",
+        "impact": -0.503887891565839,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "tenure",
+        "impact": -0.3866406742059017,
+        "direction": "decreases_churn"
+      },
+      {
+        "feature": "avg_monthly_spend",
+        "impact": 0.2855595446195636,
         "direction": "increases_churn"
       }
     ]

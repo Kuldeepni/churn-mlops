@@ -1,26 +1,22 @@
 export interface Score { p: number; y: number }
-export function expectedNetBenefit(scores: Score[], threshold: number, clv: number, cost: number, success: number): number {
-  const evChurner = success * clv - cost
-  const evNonChurner = -cost
-  let total = 0
-  for (const s of scores) {
-    if (s.p >= threshold) total += s.y === 1 ? evChurner : evNonChurner
+export interface OptResult { threshold: number; netBenefitPer1000: number; atHalf: number; targetAll: number }
+export function optimizeThreshold(scores: Score[], clv = 1200, cost = 60, success = 0.35) {
+  const n = scores.length
+  let best = { threshold: 0.5, netBenefitPer1000: -Infinity }
+  const curve: { t: number; net: number }[] = []
+  for (let i = 1; i <= 99; i++) {
+    const t = i / 100
+    let net = 0
+    for (const s of scores) {
+      if (s.p >= t) {
+        net += s.y === 1 ? clv * success : -cost
+      }
+    }
+    const per1000 = net * (1000 / n)
+    curve.push({ t, net: per1000 })
+    if (per1000 > best.netBenefitPer1000) best = { threshold: t, netBenefitPer1000: per1000 }
   }
-  return total
-}
-export function optimizeThreshold(scores: Score[], clv: number, cost: number, success: number) {
-  let bestThreshold = 0.01
-  let bestBenefit = -Infinity
-  const curve: { threshold: number; per1000: number }[] = []
-  const scale = 1000 / scores.length
-  for (let i = 0; i <= 98; i++) {
-    const t = 0.01 + i * 0.01
-    const benefit = expectedNetBenefit(scores, t, clv, cost, success)
-    const per1000 = benefit * scale
-    curve.push({ threshold: t, per1000 })
-    if (benefit >= bestBenefit) { bestBenefit = benefit; bestThreshold = t }
-  }
-  const atHalf = expectedNetBenefit(scores, 0.5, clv, cost, success) * scale
-  const targetAll = expectedNetBenefit(scores, 0, clv, cost, success) * scale
-  return { threshold: bestThreshold, netBenefitPer1000: bestBenefit * scale, atHalf, targetAll, curve }
+  const atHalf = curve.find(s => Math.abs(s.t - 0.5) < 0.005)?.net ?? 0
+  const targetAll = scores.reduce((a, s) => a + (s.y === 1 ? clv * success : -cost), 0) * (1000 / n)
+  return { ...best, atHalf, targetAll, curve }
 }
